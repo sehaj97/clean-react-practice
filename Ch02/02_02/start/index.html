@@ -2,18 +2,41 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <title>React ⚛️</title>
   </head>
   <body>
-      <div id="root"></div>
-      
-      <script type="text/javascript">
-          ReactDOM.render(
-              React.createElement("h1", null, "Getting Started!"),
-              document.getElementById("root")
-          );
-      </script>
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      let heading = React.createElement(
+        "h1",
+        null,
+        "Getting Started with React"
+      );
+      let listOfDays = React.createElement(
+        "ul",
+        {
+          style: { color: "green" },
+        },
+        React.createElement("li", null, "monday"),
+        React.createElement("li", null, "tuesday"),
+        React.createElement("li", null, "wednesday"),
+        React.createElement("li", null, "thursday"),
+        React.createElement("li", null, "friday"),
+        React.createElement("li", null, "saturday"),
+        React.createElement("li", null, "sunday")
+      );
+      let app = React.createElement("div", null, heading, listOfDays);
+
+      ReactDOM.render(app, document.getElementById("root"));
+    </script>
   </body>
 </html>

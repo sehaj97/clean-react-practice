@@ -13,6 +13,18 @@
     <title>React ⚛️</title>
   </head>
   <body>
-    <h1>Getting Started with React</h1>
+    <div id="root"></div>
+    <script>
+      let heading = React.createElement(
+        "h1",
+        null,
+        "Getting Started with React"
+      );
+      ReactDOM.render(
+        heading,
+
+        document.getElementById("root")
+      );
+    </script>
   </body>
 </html>
