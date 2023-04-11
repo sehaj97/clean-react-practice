@@ -20,7 +20,9 @@ function WelcomePage() {
             Let's Hook to Cook!
           </Card.Title>
           <Card.Text className="text-start">
-            <Button variant="success">Get Started</Button>
+            <Button href="#recipes" variant="success">
+              Get Started
+            </Button>
           </Card.Text>
         </Card.Body>
       </Card>

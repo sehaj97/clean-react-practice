@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 
-import chef from "../../chef.png";
-
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
-import Button from "react-bootstrap/Button";
+import CardCrousel from "../components/RecipeCrousel";
 
 function RecipesPage() {
   const [data, setData] = useState(null);
@@ -30,7 +28,10 @@ function RecipesPage() {
     fetchData();
   }, []);
   return (
-    <div className="d-flex justify-content-center align-items-center mt-5">
+    <div
+      className="d-flex justify-content-center align-items-center mt-5"
+      id="recipes"
+    >
       <Card
         border="secondary"
         style={{
@@ -38,128 +39,133 @@ function RecipesPage() {
           height: "90vh",
           maxHeight: "90vh",
           overflowY: "auto",
+          marginBottom: "50px",
         }}
       >
         <Card.Body>
-          <Card.Title className="text-start" style={{ fontSize: "2rem" }}>
+          <Card.Title className="text-start" style={{ fontSize: "3rem" }}>
             Welcome Great chef!
           </Card.Title>
           <Card.Title className="text-start" style={{ fontSize: "1rem" }}>
-            Directly from Chef's Kitchen...
+            Trending from Chef's Kitchen...
           </Card.Title>
 
           <Carousel fade>
             <Carousel.Item>
-              <img
-                className="d-block w-100 border border-warning rounded-circle"
-                src={data && data[0].image}
-                alt="First slide"
-                style={{ height: "300px" }}
-              />
-              <Carousel.Caption
-                className="bg-success p-1 bg-opacity-50 rounded"
-                style={{ height: "50%" }}
-              >
-                <h3>{data && data[0].title}</h3>
-              </Carousel.Caption>
+              <div class="container">
+                <div class="row">
+                  <CardCrousel
+                    bgSrc={data && data[0].image}
+                    cardTitle={data && data[0].title}
+                    cardLinkTitle="Let's Cook"
+                  ></CardCrousel>
+                </div>
+              </div>
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                className="d-block w-100 border border-warning rounded-circle"
-                src={data && data[1].image}
-                alt="Second slide"
-                style={{ height: "300px" }}
-              />
-
-              <Carousel.Caption
-                className="bg-success p-1 bg-opacity-50 rounded"
-                style={{ height: "50%" }}
-              >
-                <h3>{data && data[1].title}</h3>
-              </Carousel.Caption>
+              <div class="container">
+                <div class="row">
+                  <CardCrousel
+                    bgSrc={data && data[1].image}
+                    cardTitle={data && data[1].title}
+                    cardLinkTitle="Let's Cook"
+                  ></CardCrousel>
+                </div>
+              </div>
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                className="d-block w-100 border border-warning rounded-circle"
-                src={data && data[2].image}
-                alt="Third slide"
-                style={{ height: "300px" }}
-              />
-
-              <Carousel.Caption
-                className="bg-success p-1 bg-opacity-50 rounded"
-                style={{ height: "50%" }}
-              >
-                <h3>{data && data[2].title}</h3>
-              </Carousel.Caption>
+              <div class="container">
+                <div class="row">
+                  <CardCrousel
+                    bgSrc={data && data[2].image}
+                    cardTitle={data && data[2].title}
+                    cardLinkTitle="Let's Cook"
+                  ></CardCrousel>
+                </div>
+              </div>
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                className="d-block w-100 border border-warning rounded-circle"
-                src={data && data[3].image}
-                alt="Third slide"
-                style={{ height: "300px" }}
-              />
-
-              <Carousel.Caption
-                className="bg-success p-1 bg-opacity-50 rounded"
-                style={{ height: "50%" }}
-              >
-                <h3>{data && data[3].title}</h3>
-              </Carousel.Caption>
+              <div class="container">
+                <div class="row">
+                  <CardCrousel
+                    bgSrc={data && data[3].image}
+                    cardTitle={data && data[3].title}
+                    cardLinkTitle="Let's Cook"
+                  ></CardCrousel>
+                </div>
+              </div>
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                className="d-block w-100 border border-warning rounded-circle"
-                src={data && data[2].image}
-                alt="Third slide"
-                style={{ height: "300px" }}
-              />
-
-              <Carousel.Caption
-                className="bg-success p-1 bg-opacity-50 rounded"
-                style={{ height: "50%" }}
-              >
-                <h3>{data && data[2].title}</h3>
-              </Carousel.Caption>
+              <div class="container">
+                <div class="row">
+                  <CardCrousel
+                    bgSrc={data && data[4].image}
+                    cardTitle={data && data[4].title}
+                    cardLinkTitle="Let's Cook"
+                  ></CardCrousel>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div class="container">
+                <div class="row">
+                  <CardCrousel
+                    bgSrc={data && data[5].image}
+                    cardTitle={data && data[5].title}
+                    cardLinkTitle="Let's Cook"
+                  ></CardCrousel>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div class="container">
+                <div class="row">
+                  <CardCrousel
+                    bgSrc={data && data[6].image}
+                    cardTitle={data && data[6].title}
+                    cardLinkTitle="Let's Cook"
+                  ></CardCrousel>
+                </div>
+              </div>
             </Carousel.Item>
           </Carousel>
-          <Card.Text style={{ fontSize: "3rem" }}>TODO: </Card.Text>
 
-          <Card.Title className="text-start" style={{ fontSize: "1rem" }}>
-            Our Recommendations
+          <Card.Title
+            className="text-start"
+            style={{ fontSize: "1.5rem", marginTop: "20px" }}
+          >
+            Recommendations
           </Card.Title>
-          <Carousel slide={false}>
-            <Carousel.Item>
-              <img
-                className="d-block w-100 border border-warning rounded-circle"
-                src={data && data[0].image}
-                alt="First slide"
-                style={{ height: "200px" }}
-              />
-              <Carousel.Caption
-                className="bg-success p-1 bg-opacity-50 rounded"
-                style={{ height: "50%" }}
-              >
-                <h3>{data && data[0].title}</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100 border border-warning rounded-circle"
-                src={data && data[1].image}
-                alt="Second slide"
-                style={{ height: "200px" }}
-              />
 
-              <Carousel.Caption
-                className="bg-success p-1 bg-opacity-50 rounded"
-                style={{ height: "50%" }}
-              >
-                <h3>{data && data[1].title}</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
+          <div class="container">
+            {data &&
+              data.map((dataItem) => {
+                return (
+                  <a
+                    href={`https://www.google.com/search?q=${dataItem.title}`}
+                    target="_blank"
+                    className="row m-2"
+                  >
+                    <Card border="warning text-middle">
+                      <Card.Body className="text-start p-0">
+                        <div className="row p-1">
+                          <div className="col-3 p-0">
+                            <img
+                              src={dataItem.image}
+                              className="img-thumbnail rounded-circle"
+                              style={{ width: "320px", height: "60px" }}
+                            />
+                          </div>
+                          <div className="col-9 text-middle">
+                            {dataItem.title}
+                          </div>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </a>
+                );
+              })}
+          </div>
         </Card.Body>
       </Card>
     </div>
