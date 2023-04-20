@@ -1,9 +1,9 @@
 import "./App.css";
 
-function App() {
+function App({ library }) {
   return (
     <div className="App">
-      <h1>Hello from React</h1>
+      <h1>Hello, {library}</h1>
     </div>
   );
 }
