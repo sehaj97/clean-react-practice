@@ -1,18 +1,13 @@
+import { useState } from "react";
 import "./App.css";
-
-const [firstCity, second] = [
-  "Tokyo",
-  "Tahoe City",
-  "Bend"
-];
-
-console.log(firstCity);
-console.log(second);
-
-function App({ library }) {
+function App() {
+  const [emotion, setEmotion] = useState("happy");
   return (
     <div className="App">
-      <h1>Hello from {library}</h1>
+      <h1>I am feeling {emotion}</h1>
+      <h2>ai do something to make me feel good</h2>
+      <button onClick={() => setEmotion("Sad")}>Sad</button>
+      <button onClick={() => setEmotion("Happy")}>Happy</button>
     </div>
   );
 }
